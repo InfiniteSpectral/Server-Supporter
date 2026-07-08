@@ -23,10 +23,10 @@ export const botConfig = {
     // 5 = Competing
     activities: [
       {
-        // Text users will see (example: "Playing /help | Titan Bot").
-        name: "Made with ❤️",
+        // Text users will see (example: "Playing /help | Bot").
+        name: "Infinite Spectral's ServerBot",
         // Activity type number (0 = Playing).
-        type: 0,
+        type: 4,
       },
     ],
   },
@@ -66,9 +66,9 @@ export const botConfig = {
 
     // Embed colors by application status.
     statusColors: {
-      pending: "#FFA500",
-      approved: "#00FF00",
-      denied: "#FF0000",
+      pending: "#eeaa43",
+      approved: "#39f15b",
+      denied: "#7a0600",
     },
 
     // How long users must wait before submitting another application (hours).
@@ -91,14 +91,14 @@ export const botConfig = {
   embeds: {
     colors: {
       // Main brand colors.
-      primary: "#336699",
-      secondary: "#2F3136",
+      primary: "#c23c3c",
+      secondary: "#d453cf",
 
       // Standard status colors for success/error/warning/info messages.
-      success: "#57F287",
-      error: "#ED4245",
-      warning: "#FEE75C",
-      info: "#3498DB",
+      success: "#2feb3c",
+      error: "#cc2a18",
+      warning: "#e6b335",
+      info: "#c2cfcf",
 
       // Neutral utility colors.
       light: "#FFFFFF",
@@ -115,31 +115,31 @@ export const botConfig = {
 
       // Feature-specific colors.
       giveaway: {
-        active: "#57F287",
-        ended: "#ED4245",
+        active: "#9c75ff",
+        ended: "#653f73",
       },
       ticket: {
-        open: "#57F287",
-        claimed: "#FAA61A",
-        closed: "#ED4245",
-        pending: "#99AAB5",
+        open: "#e0c696",
+        claimed: "#d3ff91",
+        closed: "#c97469",
+        pending: "#8a6e85",
       },
-      economy: "#F1C40F",
-      birthday: "#E91E63",
-      moderation: "#9B59B6",
+      economy: "#fad232",
+      birthday: "#f564a3",
+      moderation: "#808080",
 
       // Ticket priority color mapping.
       priority: {
-        none: "#95A5A6",
-        low: "#3498db",
-        medium: "#2ecc71",
-        high: "#f1c40f",
-        urgent: "#e74c3c",
+        none: "#363131",
+        low: "#4c616b",
+        medium: "#856a38",
+        high: "#de4a47",
+        urgent: "#ff0500",
       },
     },
     footer: {
       // Default footer text used in bot embeds.
-      text: "Titan Bot",
+      text: "System",
       // Footer icon URL (null = no icon).
       icon: null,
     },
@@ -159,9 +159,9 @@ export const botConfig = {
   economy: {
     currency: {
       // Currency display name.
-      name: "coins",
+      name: "GPoints",
       // Plural display name.
-      namePlural: "coins",
+      namePlural: "gpoints",
       // Currency symbol shown in balances.
       symbol: "$",
     },
@@ -188,7 +188,7 @@ export const botConfig = {
 
     // Jail time after failed rob (milliseconds).
     // 3600000 = 1 hour.
-    robFailJailTime: 3600000,
+    robFailJailTime: 1400000,
   },
 
   // =========================
@@ -267,7 +267,7 @@ export const botConfig = {
     maximumDuration: 2592000000,
 
     // Role IDs allowed to host giveaways.
-    allowedRoles: [],
+    allowedRoles: [1522734455171580077],[1522734972425994453],[1524257120768229508],
 
     // Role IDs that bypass giveaway restrictions.
     bypassRoles: [],
@@ -278,10 +278,10 @@ export const botConfig = {
   // =========================
   birthday: {
     // Role ID given to users on their birthday.
-    defaultRole: null,
+    defaultRole: 1524269435546894559,
 
     // Channel ID where birthday announcements are posted.
-    announcementChannel: null,
+    announcementChannel: 1524269639847120906,
 
     // Timezone used to calculate birthday dates.
     timezone: "UTC",
@@ -292,10 +292,10 @@ export const botConfig = {
   // =========================
   verification: {
     // Message shown when posting the verification panel.
-    defaultMessage: "Click the button below to verify yourself and gain access to the server!",
+    defaultMessage: "To access the server, Please click the Verify Authentification",
 
     // Text on the verification button.
-    defaultButtonText: "Verify",
+    defaultButtonText: "Verify Authentification",
 
     // Automatic verification behavior.
     autoVerify: {
@@ -362,15 +362,15 @@ export const botConfig = {
     // Welcome template posted when a user joins.
     // Placeholders: {user}, {server}, {memberCount}
     defaultWelcomeMessage:
-      "Welcome {user} to {server}! We now have {memberCount} members!",
+      "Greetings{user} to {server} Theres now: {memberCount} People InServer.",
     // Goodbye template posted when a user leaves.
     // Placeholders: {user}, {memberCount}
     defaultGoodbyeMessage:
-      "{user} has left the server. We now have {memberCount} members.",
+      "{user} has moved on, hope you had a good stay. Now we have {memberCount} People InServer.",
     // Channel ID for welcome messages.
-    defaultWelcomeChannel: null,
+    defaultWelcomeChannel: 1524271544451207289,
     // Channel ID for goodbye messages.
-    defaultGoodbyeChannel: null,
+    defaultGoodbyeChannel: 1524271569017507910,
   },
 
   // =========================
@@ -412,8 +412,8 @@ export const botConfig = {
           guild.members.cache.filter((m) => m.user.bot).size.toString(),
       },
       members_only: {
-        name: "👤 Humans",
-        description: "Total human members (non-bots)",
+        name: "👤 People",
+        description: "Total people members (non-bots)",
         getCount: (guild) =>
           guild.members.cache.filter((m) => !m.user.bot).size.toString(),
       },
@@ -424,13 +424,13 @@ export const botConfig = {
   // GENERIC BOT MESSAGES
   // =========================
   messages: {
-    noPermission: "You do not have permission to use this command.",
-    cooldownActive: "Please wait {time} before using this command again.",
-    errorOccurred: "An error occurred while executing this command.",
+    noPermission: "You dont have the permission to use this.",
+    cooldownActive: "Wait {time} before using The Command once again.",
+    errorOccurred: "An error occurred while inserting the Command",
     missingPermissions:
-      "I am missing required permissions to perform this action.",
-    commandDisabled: "This command has been disabled.",
-    maintenanceMode: "The bot is currently in maintenance mode.",
+      "I miss required permissions to do this.",
+    commandDisabled: "This command has been turned off.",
+    maintenanceMode: "The Support Bot is currently on maintenance, please wait untill its back on.",
   },
 
   // =========================
